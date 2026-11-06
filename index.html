@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوق الكتب | Book Market</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --success-color: #27ae60;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .search-input, .form-control {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus, .form-control:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .book-card {
+            background: #fff;
+            border: 1px solid #e1e1e1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .book-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: var(--primary-color);
+        }
+
+        .book-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: var(--success-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #219653;
+        }
+
+        .buy-btn {
+            background-color: var(--accent-color);
+        }
+
+        .buy-btn:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>📚 سوق الكتب</h2>
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#books-section">شراء الكتب</a>
+            <a href="#add-book-section">بيع كتاب</a>
+            <a href="#about-section">من نحن</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- قسم الترحيب والبحث (الرئيسية) -->
+        <div id="home" class="section">
+            <h2>مرحباً بك في سوق الكتب</h2>
+            <p>اكتشف عالم الكتب واشترِ كتابك المفضل بكل سهولة.</p>
+            <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن كتاب..." onkeyup="searchBooks()">
+        </div>
+
+        <!-- قائمة الكتب المتاحة -->
+        <div id="books-section" class="section">
+            <h2>📖 الكتب المتاحة للبيع</h2>
+            <div id="booksList" class="books-grid">
+                <div class="book-card" data-title="فن اللامبالاة">
+                    <h3>فن اللامبالاة</h3>
+                    <p>السعر: 5000 جنيه</p>
+                    <button class="buy-btn" onclick="buyBook('فن اللامبالاة', 5000)">شراء الآن</button>
+                </div>
+                <div class="book-card" data-title="قواعد العشق الأربعون">
+                    <h3>قواعد العشق الأربعون</h3>
+                    <p>السعر: 6000 جنيه</p>
+                    <button class="buy-btn" onclick="buyBook('قواعد العشق الأربعون', 6000)">شراء الآن</button>
+                </div>
+                <div class="book-card" data-title="الأب الغني والأب الفقير">
+                    <h3>الأب الغني والأب الفقير</h3>
+                    <p>السعر: 7000 جنيه</p>
+                    <button class="buy-btn" onclick="buyBook('الأب الغني والأب الفقير', 7000)">شراء الآن</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم إضافة كتاب -->
+        <div id="add-book-section" class="section">
+            <h2>📖 اعرض كتابك للبيع</h2>
+            <input type="text" id="bookTitle" class="form-control" placeholder="اسم الكتاب">
+            <input type="number" id="bookPrice" class="form-control" placeholder="السعر بالجنيه">
+            <button onclick="addBook()">إضافة الكتاب</button>
+        </div>
+
+        <!-- من نحن -->
+        <div id="about-section" class="section">
+            <h2>من نحن؟</h2>
+            <p>سوق الكتب هو موقع إلكتروني يهدف إلى تسهيل عملية بيع وشراء الكتب وتبادل المعرفة بين القراء.</p>
+        </div>
+
+        <!-- اتصل بنا -->
+        <div class="section">
+            <h2>اتصل بنا</h2>
+            <p>يسعدنا تواصلك معنا عبر البريد الإلكتروني: <strong>bookmarket@gmail.com</strong></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 سوق الكتب</p>
+    </footer>
+
+    <script>
+        function addBook() {
+            const titleInput = document.getElementById('bookTitle');
+            const priceInput = document.getElementById('bookPrice');
+            const booksList = document.getElementById('booksList');
+
+            const title = titleInput.value.trim();
+            const price = priceInput.value.trim();
+
+            if (title === "" || price === "") {
+                alert("الرجاء إدخال اسم الكتاب والسعر!");
+                return;
+            }
+
+            const newBookCard = document.createElement('div');
+            newBookCard.className = 'book-card';
+            newBookCard.setAttribute('data-title', title);
+            
+            newBookCard.innerHTML = `
+                <h3>${title}</h3>
+                <p>السعر: ${price} جنيه</p>
+                <button class="buy-btn" onclick="buyBook('${title}', ${price})">شراء الآن</button>
+            `;
+
+            booksList.appendChild(newBookCard);
+
+            titleInput.value = "";
+            priceInput.value = "";
+
+            alert("تم إضافة الكتاب بنجاح!");
+        }
+
+        function buyBook(title, price) {
+            alert(`شكراً لك! لقد قمت بطلب شراء كتاب "${title}" بسعر ${price} جنيه.`);
+        }
+
+        function searchBooks() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.book-card');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
+
