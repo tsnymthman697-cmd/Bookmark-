@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="إنشاء حساب جديد في منصة بيع وشراء الكتب">
+
+    <title>إنشاء حساب جديد | BookMarket</title>
+    <link rel="stylesheet" href="Css/style.css">
+ 
+</head>
+
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>📚 BookMarket</h1>
+        <p>منصتك لبيع وشراء الكتب</p>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main>
+
+        <section>
+
+            <h2>إنشاء حساب جديد</h2>
+
+            <p>انضم إلينا واستمتع بخدمات بيع وشراء الكتب</p>
+
+            <form action="register.php" method="post">
+
+                <!-- الاسم الكامل -->
+                <div>
+                    <label for="fullname">الاسم الكامل:</label>
+
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        placeholder="أدخل اسمك الكامل"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- البريد الإلكتروني -->
+                <div>
+                    <label for="email">البريد الإلكتروني:</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="أدخل بريدك الإلكتروني"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- رقم الهاتف -->
+                <div>
+                    <label for="phone">رقم الهاتف:</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="أدخل رقم هاتفك"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- كلمة المرور -->
+                <div>
+                    <label for="password">كلمة المرور:</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="أنشئ كلمة مرور"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- تأكيد كلمة المرور -->
+                <div>
+                    <label for="confirm-password">
+                        تأكيد كلمة المرور:
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm_password"
+                        placeholder="أعد كتابة كلمة المرور"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- نوع الحساب -->
+                <div>
+                    <label for="account-type">نوع الحساب:</label>
+
+                    <select id="account-type" name="account_type" required>
+
+                        <option value="">اختر نوع الحساب</option>
+
+                        <option value="buyer">مشتري</option>
+
+                        <option value="seller">بائع</option>
+
+                        <option value="both">مشتري وبائع</option>
+
+                    </select>
+                </div>
+
+                <br>
+
+                <!-- الموافقة على الشروط -->
+                <div>
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required>
+
+                    <label for="terms">
+                        أوافق على شروط وأحكام المنصة
+                    </label>
+
+                </div>
+
+                <br>
+
+                <!-- زر إنشاء الحساب -->
+                <button type="submit">
+                    إنشاء حساب جديد
+                </button>
+              
+
+            </form>
+
+            <hr>
+
+            <!-- العودة لتسجيل الدخول -->
+            <p>
+                لديك حساب بالفعل؟
+                <a href="login.html">تسجيل الدخول</a>
+            </p>
+
+            <!-- التواصل -->
+            <p>
+                تحتاج إلى مساعدة؟
+                <a href="contact.html">تواصل معنا</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+
+        <p>جميع الحقوق محفوظة © 2026 BookMarket</p>
+
+    </footer>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

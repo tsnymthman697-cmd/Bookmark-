@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="بيع وشراء الكتب">
+    <title>البيع والشراء | BookMarket</title>
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>📚 BookMarket</h1>
+        <p>بع كتبك واشترِ الكتب التي تحتاجها</p>
+    </header>
+
+    <!-- شريط التنقل -->
+    <nav>
+        <ul>
+            <li><a href="index.html">تسجيل الخروج </a></li>
+            <li><a href="search.html">البحث عن كتاب</a></li>
+            <li><a href="market.html">البيع والشراء</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- إضافة كتاب للبيع -->
+        <section>
+
+            <h2>عرض كتاب للبيع</h2>
+
+            <p>أدخل بيانات الكتاب الذي ترغب في بيعه.</p>
+
+            <form action="market.php" method="post" enctype="multipart/form-data">
+
+                <div>
+                    <label for="title">اسم الكتاب:</label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="أدخل اسم الكتاب"
+                        required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="author">اسم المؤلف:</label>
+
+                    <input
+                        type="text"
+                        id="author"
+                        name="author"
+                        placeholder="أدخل اسم المؤلف"
+                        required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="category">تصنيف الكتاب:</label>
+
+                    <select id="category" name="category" required>
+                        <option value="">اختر التصنيف</option>
+                        <option value="scientific">علمية</option>
+                        <option value="literary">أدبية</option>
+                        <option value="historical">تاريخية</option>
+                        <option value="religious">دينية</option>
+                        <option value="university">جامعية</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="price">سعر الكتاب:</label>
+
+                    <input
+                        type="number"
+                        id="price"
+                        name="price"
+                        min="0"
+                        placeholder="أدخل السعر"
+                        required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="condition">حالة الكتاب:</label>
+
+                    <select id="condition" name="condition" required>
+                        <option value="">اختر حالة الكتاب</option>
+                        <option value="new">جديد</option>
+                        <option value="used">مستعمل</option>
+                    </select>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="book-image">صورة الكتاب:</label>
+
+                    <input
+                        type="file"
+                        id="book-image"
+                        name="book_image"
+                        accept="image/*">
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="description">وصف الكتاب:</label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        placeholder="اكتب وصفاً مختصراً للكتاب"></textarea>
+                </div>
+
+                <br>
+
+                <button type="submit">
+                    إضافة الكتاب للبيع
+                </button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <!-- الكتب المعروضة للشراء -->
+        <section>
+
+            <h2>الكتب المتاحة للشراء</h2>
+
+            <article>
+                <h3>كتاب العادات الذرية</h3>
+                <p>المؤلف: جيمس كلير</p>
+                <p>الحالة: جديد</p>
+                <p>السعر: 15000 جنيه</p>
+
+                <button type="button">شراء الكتاب</button>
+            </article>
+
+            <hr>
+
+            <article>
+                <h3>كتاب فن اللامبالاة</h3>
+                <p>المؤلف: مارك مانسون</p>
+                <p>الحالة: مستعمل</p>
+                <p>السعر: 12000 جنيه</p>
+
+                <button type="button">شراء الكتاب</button>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 BookMarket</p>
+    </footer>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

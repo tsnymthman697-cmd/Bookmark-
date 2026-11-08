@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تواصل مع إدارة منصة بيع وشراء الكتب">
+    <title>تواصل معنا | BookMarket</title>
+   <link rel="stylesheet" href="Css/style.css"> 
+</head>
+
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>📚 BookMarket</h1>
+        <p>نسعد دائماً بتواصلك معنا</p>
+    </header>
+
+    <!-- شريط التنقل -->
+    <nav>
+        <ul>
+            <li><a href="index.html">تسجيل الخروج</a></li>
+            <li><a href="search.html">البحث عن كتاب</a></li>
+            <li><a href="market.html">البيع والشراء</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main>
+
+        <section>
+
+            <h2>تواصل معنا</h2>
+
+            <p>
+                إذا كان لديك استفسار أو مشكلة أو اقتراح،
+                يمكنك إرسال رسالة إلينا.
+            </p>
+
+            <form action="contact.php" method="post">
+
+                <!-- الاسم -->
+                <div>
+                    <label for="name">الاسم الكامل:</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="أدخل اسمك الكامل"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- البريد الإلكتروني -->
+                <div>
+                    <label for="email">البريد الإلكتروني:</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="أدخل بريدك الإلكتروني"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- موضوع الرسالة -->
+                <div>
+                    <label for="subject">موضوع الرسالة:</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="اكتب موضوع الرسالة"
+                        required>
+                </div>
+
+                <br>
+
+                <!-- نص الرسالة -->
+                <div>
+                    <label for="message">الرسالة:</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="اكتب رسالتك هنا"
+                        required></textarea>
+                </div>
+
+                <br>
+
+                <button type="submit">
+                    إرسال الرسالة
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- معلومات التواصل -->
+        <section>
+
+            <h2>معلومات التواصل</h2>
+
+            <p>📧 البريد الإلكتروني: info@bookmarket.com</p>
+
+            <p>📞 الهاتف: 0000000000</p>
+
+            <p>📚 BookMarket - منصة بيع وشراء الكتب</p>
+
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 BookMarket</p>
+    </footer>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
